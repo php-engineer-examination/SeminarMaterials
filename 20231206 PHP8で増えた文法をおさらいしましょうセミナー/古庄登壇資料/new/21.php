@@ -5,11 +5,14 @@ error_reporting(-1);
 
 $num = 123;
 $str = 'string';
-$obj = new readonly class($num, $str) {
+$obj = new readonly class(num: $num, str: $str) {
     public function __construct(
-        private int $num,
-        private string $str,
+        public int $num,
+        public string $str,
     ) {
     }
 };
-var_dump($obj);
+var_dump($obj->num);
+var_dump($obj->str);
+
+// $obj->num = 987; // Fatal error

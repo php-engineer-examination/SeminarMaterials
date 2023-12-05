@@ -21,10 +21,14 @@ class Hoge
         return $this;
     }
 }
+// 
 $r = (new Hoge())?->func1()?->func2()?->func3();
 var_dump($r);
+// Hoge::func1
+// Hoge::func2
+// NULL
 
-// 以前ならこんな書き方でした
+// 以前なら例えばこんな書き方でした
 $r = (new Hoge())->func1();
 if (null !== $r) {
     $r = $r->func2();

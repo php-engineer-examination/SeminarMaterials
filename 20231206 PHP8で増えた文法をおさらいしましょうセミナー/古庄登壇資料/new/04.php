@@ -22,7 +22,7 @@ switch($v) {
     default:
         echo "switch: any\n";
         break;
-}
+} // switch: int 2 or 4
 
 // matchは「厳密」
 // matchは「式」なので値を返してくる
@@ -33,6 +33,7 @@ $r = match($v) {
     default => "match: any\n",
 };
 echo $r;
+// match: string 1 or 2
 
 // defaultがなく、かつ「条件のいずれにもmatchしない」とFatal errorになる
 $v = 123;
@@ -42,3 +43,4 @@ $r = match($v) {
     '1', '2' => "match: string 1 or 2\n",
 };
 echo $r;
+// Fatal error: Uncaught UnhandledMatchError: Unhandled match case 123 in ...

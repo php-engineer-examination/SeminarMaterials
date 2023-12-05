@@ -36,5 +36,5 @@ $obj = new Foo();
 var_dump($obj);
 $obj->setStr('hoge'); // 初回は設定できる
 var_dump($obj);
-$obj->setStr('piyo'); // 2回目は Fatal error: Uncaught Error: Cannot modify readonly property
-var_dump($obj);
+// $obj->setStr('piyo'); // 2回目は Fatal error: Uncaught Error: Cannot modify readonly property
+// var_dump($obj);

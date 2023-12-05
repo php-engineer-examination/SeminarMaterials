@@ -13,7 +13,7 @@ enum EnumType
 }
 // 値の把握
 $val = EnumType::Hoge;
-var_dump($val);
+var_dump($val); // enum(EnumType::Hoge)
 // 定義していないものは指定できない
 // $val = EnumType::Fuga; // Fatal error: Uncaught Error: Undefined constant
 // var_dump($val);
@@ -35,20 +35,20 @@ enum EnumTypeWithValue: string
     public function func()
     {
         echo __METHOD__ , "\n";
-        var_dump($this);
+        var_dump($this); // enum(EnumTypeWithValue::Hoge)
         // $this = static::Foo; // 自身の書き換えはできない
     }
 }
 // 値の把握
 $val = EnumTypeWithValue::Hoge;
-var_dump($val);
-var_dump($val->value); // 値が取得できる
+var_dump($val); // enum(EnumTypeWithValue::Hoge)
+var_dump($val->value); // 値が取得できる // string(6) "hogera"
 // メソッドのcall
 $val->func();
 // 値の推測
 $val = EnumTypeWithValue::from('piyopiyo');
-var_dump($val);
+var_dump($val); // enum(EnumTypeWithValue::Piyo)
 // $val = EnumTypeWithValue::from('dummy'); // from だと、存在しないときは Fatal error
 // var_dump($val);
 $val = EnumTypeWithValue::tryFrom('dummy'); // tryFromだと、存在しない時はnull
-var_dump($val);
+var_dump($val); // NULL

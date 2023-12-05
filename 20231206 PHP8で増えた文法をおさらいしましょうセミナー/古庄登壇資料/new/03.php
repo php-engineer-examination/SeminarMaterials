@@ -12,5 +12,13 @@ hoge(3.14);
 hoge('str');
 
 // この2つはエラー
-hoge(false);
-hoge(null);
+// hoge(false);
+// hoge(null);
+
+// 数値(int または float)は、本当によく使います
+function add(int|float $i, int|float $j): int|float
+{
+    return $i + $j;
+}
+var_dump( add(1, 2) );
+var_dump( add(1, 3.14) );

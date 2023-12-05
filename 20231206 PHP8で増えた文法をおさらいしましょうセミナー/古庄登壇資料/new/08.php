@@ -12,6 +12,9 @@ $b = str_starts_with($haystack, 'bc');
 var_dump($b);
 $b = str_starts_with($haystack, 'fg');
 var_dump($b);
+// bool(true)
+// bool(false)
+// bool(false)
 echo "\n";
 
 // 指定された部分文字列が、文字列に含まれるかを調べる
@@ -21,6 +24,9 @@ $b = str_contains($haystack, 'bc');
 var_dump($b);
 $b = str_contains($haystack, 'fg');
 var_dump($b);
+// bool(true)
+// bool(true)
+// bool(true)
 echo "\n";
 
 // 文字列が、指定された文字列で終わるかを調べる
@@ -30,3 +36,6 @@ $b = str_ends_with($haystack, 'bc');
 var_dump($b);
 $b = str_ends_with($haystack, 'fg');
 var_dump($b);
+// bool(false)
+// bool(false)
+// bool(true)

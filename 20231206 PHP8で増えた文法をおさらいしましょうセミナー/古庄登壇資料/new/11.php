@@ -7,7 +7,9 @@ function func1(int $num, float $decimals, string $str)
 {
     var_dump($num, $decimals, $str);
 }
+
 // これは PHP 8.0から可能
+// パラメタを全部、名前付きでアンパックする
 $awk = [];
 $awk['str'] = 'string';
 $awk['num'] = 123;
@@ -22,6 +24,7 @@ $awk['decimals'] = 3.14;
 func1(...$awk, str: 'hogera');
 
 // これはPHP 8.3までのいずれのバージョンでもFatal error(Uncaught Error: Named parameter $str overwrites previous argument in ...)
+// 名前のアンパックと名前付き引数で重複がある
 $awk = [];
 $awk['str'] = 'string';
 $awk['num'] = 123;
