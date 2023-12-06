@@ -6,10 +6,10 @@ error_reporting(-1);
 // __construct()と「クラス名ど同じ名前のメソッド」がある場合は、PHP5以降なら __construct() が呼び出される
 class Hoge
 {
-	public function __construct()
+    public function __construct()
     {
         echo "const\n";
-	}
+    }
     public function Hoge()
     {
         echo "Hoge\n";
